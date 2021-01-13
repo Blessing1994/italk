@@ -7,9 +7,12 @@ class HomePage extends StatelessWidget {
 
   void handleClick(String value) {
     switch (value) {
-      case 'Logout':
+      case 'Change Theme':
+        Get.changeTheme(
+            Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
         break;
       case 'Settings':
+        print("Settings");
         break;
     }
   }
@@ -21,18 +24,18 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('iTalk'),
         actions: [
-          IconButton(
-            icon: Icon(Icons.star),
-            onPressed: () {
-              // controller.changeTheme(false);
-              Get.changeTheme(
-                  Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.star),
+          //   onPressed: () {
+          //     // controller.changeTheme(false);
+          //     Get.changeTheme(
+          //         Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+          //   },
+          // ),
           PopupMenuButton<String>(
             onSelected: handleClick,
             itemBuilder: (BuildContext context) {
-              return {'Logout', 'Settings'}.map((String choice) {
+              return {'Change Theme', 'Settings'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice),

@@ -18,10 +18,15 @@ class HistoryPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               for (var item in box.read('history'))
-                Text(
-                  item,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                )
+                Column(
+                  children: [
+                    Text(
+                      item,
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Divider(),
+                  ],
+                ),
             ],
           ),
           // child: (Text("${box.read('history')}")),

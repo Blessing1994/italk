@@ -17,13 +17,17 @@ class CalculatorBody extends StatelessWidget {
           child: Material(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22.0)),
-            elevation: 18.0,
-            color: Colors.white60,
+            elevation: 5.0,
+            color: Colors.white70,
             clipBehavior: Clip.antiAlias,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Image.asset("assets/images/logo2.png"),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
